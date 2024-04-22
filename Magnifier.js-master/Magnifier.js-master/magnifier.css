@@ -1,0 +1,133 @@
+*{
+    box-sizing: border-box;
+  }
+
+
+ 
+
+.magnifier-thumb-wrapper {
+    position: relative;
+    display: block;
+    top: 0;
+    left: 0;
+   
+}
+
+.magnifier-lens {
+    position: absolute;
+    border: solid 1px #ccc;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    
+}
+
+.magnifier-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: solid 1px #ccc;
+    color: #fff;
+    text-align: center;
+    background: transparent;
+    background: rgba(50, 50, 50, 0.5);
+    z-index: 1000;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F323232,endColorstr=#7F323232)";
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F323232,endColorstr=#7F323232);
+    
+}
+
+.magnifier-large {
+    position: absolute;
+    z-index: 100;
+    
+}
+
+.magnifier-preview {
+  position: relative;
+   top: -269px;
+  left: 332px; 
+  bottom: 100px;
+  overflow: hidden;
+}
+
+.magnifier-preview img {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.opaque {
+    opacity: .5;
+    filter: alpha(opacity=50);
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50)
+}
+
+.hidden {
+    display: none
+}
+
+.column{
+    float: left;
+    width: 25%;
+    height: 331.750px;
+  }
+
+   @media screen and (max-width: 768px) {
+
+  .column {
+    
+    width: 50%;
+  }
+
+  .magnifier-preview {
+    position: relative;
+     top: -269px;
+    left: 375px; 
+    bottom: 100px;
+    overflow: hidden;
+  }
+} 
+
+ /*@media screen and (max-width: 480px) {
+  .column {
+    width: 100%;
+  }
+} */
+
+@media screen and (max-width: 1024px) {
+    .column {
+      width: 33.333%;
+    }
+
+    
+  }
+
+  @media screen and (max-width: 768px) {
+    .column {
+      width: 50%;
+    }
+
+    .magnifier-preview {
+      position: relative;
+      top: -269px;
+      left: 375px;
+      bottom: 100px;
+      overflow: hidden;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .column {
+      width: 100%;
+    }
+
+    .magnifier-preview {
+      position: relative;
+      top: -269px;
+      left: 0;
+      bottom: 100px;
+      overflow: hidden;
+    }
+}

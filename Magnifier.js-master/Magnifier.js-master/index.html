@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="magnifier.css">
+</head>
+<body>
+
+  <div class="column">
+    <a class="magnifier-thumb-wrapper">
+        <img id="thumb" src="images/img1.jpg" style="width: 265px; height: 265px">
+        
+    </a>
+    <div class="magnifier-preview" id="preview" style="width: 265px; height: 265px"></div>
+  </div>
+
+   <div class="column">
+  <a class="magnifier-thumb-wrapper">
+    <img id="thumb2" src="images/img2.webp" style="width: 265px; height: 265px">
+</a>
+<div class="magnifier-preview" id="preview2" style="width: 265px; height: 265px" ></div>
+</div>
+
+<div class="column">
+<a class="magnifier-thumb-wrapper">
+  <img id="thumb3" src="images/img3.webp" style="width: 265px; height: 265px">
+</a>
+<div class="magnifier-preview" id="preview3" style="width: 265px; height: 265px"></div>
+</div>
+
+<div class="column">
+  <a class="magnifier-thumb-wrapper">
+    <img id="thumb4" src="images/img4.jpg" style="width: 265px; height: 265px">
+  </a>
+  <div class="magnifier-preview" id="preview4" style="width: 265px; height: 265px"></div>
+</div>
+
+<div class="column">
+  <a class="magnifier-thumb-wrapper">
+    <img id="thumb5" src="images/img5.jpg" style="width: 265px; height: 265px">
+  </a>
+  <div class="magnifier-preview" id="preview5" style="width: 265px; height: 265px"></div>
+</div>
+
+<div class="column">
+  <a class="magnifier-thumb-wrapper" >
+    <img id="thumb6" src="images/img6.webp" style="width: 265px; height: 265px">
+  </a>
+  <div class="magnifier-preview" id="preview6" style="width: 265px; height: 265px"></div>
+</div>
+
+<div class="column">
+  <a class="magnifier-thumb-wrapper" >
+    <img id="thumb7" src="images/img7.jpg" style="width: 265px; height: 265px">
+  </a>
+  <div class="magnifier-preview" id="preview7" style="width: 265px; height: 265px"></div>
+</div>
+
+<div class="column">
+  <a class="magnifier-thumb-wrapper" >
+    <img id="thumb8" src="images/img8.jpg" style="width: 265px; height: 265px">
+  </a>
+  <div class="magnifier-preview" id="preview8" style="width: 265px; height: 265px"></div>
+</div>
+
+ 
+<script type="text/javascript" src="Event.js"></script>
+<script type="text/javascript" src="Magnifier.js"></script>
+<script type="text/javascript">
+
+var evt = new Event(),
+   m = new Magnifier(evt, {
+    zoom: 3,
+    zoomable: true,  
+});
+
+// function imageGenerate(thumbSelector,largeImage,largeWrapperSelector){
+//       return 
+//       `<div class="column">
+//   <a class="magnifier-thumb-wrapper" href="${largeImage}">
+//     <img id="${thumbSelector}" src="${largeImage}" style="width: 265px; height: 265px">
+//   </a>
+//   <div class="magnifier-preview" id="${largeWrapperSelector}" style="width: 265px; height: 265px"></div>
+//   </div>`;
+
+//     }
+
+//   const imgContainer = document.getElementById("");
+
+  // imgContainer.innerHTML += imageGenerate('#thumb5','images/img3.webp','#preview5');
+
+    function attachImagePreview(thumbSelector, largeImage, largeWrapperSelector) {
+  m.attach({
+    thumb: thumbSelector,
+    large: largeImage,
+    largeWrapper: largeWrapperSelector,
+   
+  });
+}
+
+
+attachImagePreview('#thumb', 'images/img1.jpg','preview');
+attachImagePreview('#thumb2', 'images/img2.webp','preview2');
+attachImagePreview('#thumb3', 'images/img3.webp','preview3');
+attachImagePreview('#thumb4', 'images/img4.jpg','preview4');
+attachImagePreview('#thumb5','images/img5.jpg','preview5');
+attachImagePreview('#thumb6','images/img6.webp','preview6');
+attachImagePreview('#thumb7','images/img7.jpg','preview7');
+attachImagePreview('#thumb8','images/img8.jpg','preview8');
+
+const images = document.querySelectorAll(".magnifier-thumb-wrapper");
+const previews = document.querySelectorAll(".magnifier-preview");
+
+images.forEach((image,index)=>{
+
+  image.addEventListener("mouseover",()=>{
+    if(index % 4 === 3){
+       //console.log(1);
+       for(let i=0;i<previews.length;i++){
+        previews[i].style.left = '-331px';
+      }
+    }else{
+       //console.log(2);
+      //image.style.top = '100px';
+      for(let i=0;i<previews.length;i++){
+        previews[i].style.left = '';
+      }
+    }
+  });
+
+  image.addEventListener("mouseout",()=>{
+    if(index % 4 === 3){
+      for(let i=0;i<previews.length;i++){
+        previews[i].style.left = '-331px';
+      }
+   //console.log(3);
+    }else{
+   //console.log(4);
+  //image.style.top = '100px';
+  for(let i=0;i<previews.length;i++){
+        previews[i].style.left = '';
+      }
+    }
+  });
+});
+
+</script>
+</div>
+</body>
+</html>
