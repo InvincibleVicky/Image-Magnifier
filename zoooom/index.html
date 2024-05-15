@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style >
+    img{
+  height: 200px;
+  width: 330px;
+}
+
+.container{
+  float: left;
+}
+  </style>
+  
+</head>
+<body>
+  <div class="container">
+    <img  src="images/small/image1.jpg" data-zoom-image="images/large/image1.jpg" />
+  </div>
+
+  <div class="container">
+    <img  src="images/small/image2.jpg" data-zoom-image="images/large/image2.jpg" />
+  </div>
+
+  <div class="container">
+    <img  src="images/small/image3.jpg" data-zoom-image="images/large/image3.jpg" />
+  </div>
+
+  <div class="container">
+    <img  src="images/small/image4.jpg" data-zoom-image="images/large/image4.jpg" />
+  </div>
+ 
+  <div class="container">
+    <img  src="images/small/image1.jpg" data-zoom-image="images/large/image1.jpg" />
+  </div>
+
+  <div class="container">
+    <img  src="images/small/image2.jpg" data-zoom-image="images/large/image2.jpg" />
+  </div>
+
+  <div class="container">
+    <img  src="images/small/image3.jpg" data-zoom-image="images/large/image3.jpg" />
+  </div>
+
+  <div class="container">
+    <img  src="images/small/image4.jpg" data-zoom-image="images/large/image4.jpg" />
+  </div>
+
+  <div class="container">
+    <img src="images/small/image1.jpg" data-zoom-image="images/large/image1.jpg" />
+  </div>
+
+  <div class="container">
+    <img  src="images/small/image2.jpg" data-zoom-image="images/large/image2.jpg" />
+  </div>
+
+  <div class="container">
+    <img  src="images/small/image3.jpg" data-zoom-image="images/large/image3.jpg" />
+  </div>
+
+  <div class="container">
+    <img  src="images/small/image4.jpg" data-zoom-image="images/large/image4.jpg" />
+  </div>
+ 
+  <div class="container">
+    <img  src="images/small/image1.jpg" data-zoom-image="images/large/image1.jpg" />
+  </div>
+
+  <div class="container">
+    <img  src="images/small/image2.jpg" data-zoom-image="images/large/image2.jpg" />
+  </div>
+
+  <div class="container">
+    <img  src="images/small/image3.jpg" data-zoom-image="images/large/image3.jpg" />
+  </div>
+
+  <div class="container">
+    <img src="images/small/image4.jpg" data-zoom-image="images/large/image4.jpg" />
+  </div>
+  
+  <!-- <div id="container"></div> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/3.0.8/jquery.elevatezoom.min.js"></script>
+
+  <script>
+
+$(document).ready(function(){
+  $('.container img').each(function(index){
+    $(this).elevateZoom({
+      zoomWindowPosition: index % 4 == 3 ? 9 : 1,
+      scrollZoom: true,
+      zoomWindowWidth: 323, 
+      zoomWindowHeight: 192
+    });
+  });
+});
+
+// const imgEle = document.querySelectorAll('.container img');
+
+// imgEle.forEach((img,index)=>{
+
+//   $(document).ready(function(){
+//   $('.container img').elevateZoom({
+//     zoomWindowPosition: 1,
+//     scrollZoom: true,
+//     zoomWindowWidth: 323, 
+//     zoomWindowHeight: 192
+//   });
+
+//   //$('.container img').each(function(index){
+//     if ('#id.val()' % 4 == 3) {
+//       // $(this).data('elevateZoom', $(this).data('elevateZoom')).removeData('elevateZoom');
+//       $('.container img').elevateZoom({ 
+//         zoomWindowPosition: 9,
+//         scrollZoom: true,
+//         zoomWindowWidth: 323, 
+//         zoomWindowHeight: 192
+//       });
+//     }
+//  // });
+// });
+
+// })
+
+  </script>
+
+</body>
+</html>
