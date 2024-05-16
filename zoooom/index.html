@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <style >
+  <style>
     img{
   height: 200px;
   width: 330px;
@@ -34,6 +34,10 @@
   </div>
  
   <div class="container">
+    <img  src="images/small/image3.jpg" data-zoom-image="images/large/image3.jpg" />
+  </div>
+
+  <div class="container">
     <img  src="images/small/image1.jpg" data-zoom-image="images/large/image1.jpg" />
   </div>
 
@@ -42,11 +46,7 @@
   </div>
 
   <div class="container">
-    <img  src="images/small/image3.jpg" data-zoom-image="images/large/image3.jpg" />
-  </div>
-
-  <div class="container">
-    <img  src="images/small/image4.jpg" data-zoom-image="images/large/image4.jpg" />
+    <img  src="images/small/image5.jpg" data-zoom-image="images/large/image5.jpg" />
   </div>
 
   <div class="container">
@@ -54,11 +54,11 @@
   </div>
 
   <div class="container">
-    <img  src="images/small/image2.jpg" data-zoom-image="images/large/image2.jpg" />
+    <img  src="images/small/image5.jpg" data-zoom-image="images/large/image5.jpg" />
   </div>
 
   <div class="container">
-    <img  src="images/small/image3.jpg" data-zoom-image="images/large/image3.jpg" />
+    <img  src="images/small/image1.jpg" data-zoom-image="images/large/image1.jpg" />
   </div>
 
   <div class="container">
@@ -66,7 +66,7 @@
   </div>
  
   <div class="container">
-    <img  src="images/small/image1.jpg" data-zoom-image="images/large/image1.jpg" />
+    <img  src="images/small/image3.jpg" data-zoom-image="images/large/image3.jpg" />
   </div>
 
   <div class="container">
@@ -84,19 +84,14 @@
   <!-- <div id="container"></div> -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/3.0.8/jquery.elevatezoom.min.js"></script>
+  <script src="ezzoom.js"></script>
 
   <script>
 
 $(document).ready(function(){
   $('.container img').each(function(index){
-    $(this).elevateZoom({
-      zoomWindowPosition: index % 4 == 3 ? 9 : 1,
-      scrollZoom: true,
-      zoomWindowWidth: 323, 
-      zoomWindowHeight: 192
-    });
-  });
+    $(this).elevateZoom({zoomWindowPosition: index % 4 == 3 ? 9 : 1});
+  }); 
 });
 
 // const imgEle = document.querySelectorAll('.container img');
